@@ -1,0 +1,50 @@
+{
+
+  "name":         "kreationsbyran/kb-slideshow",
+  "version":      "1.0.0-beta",
+  "description":  "Simple slideshow module",
+  "type":         "silverstripe-module",
+  "homepage":     "https://github.com/kreationsbyran/KBSlideshow",
+  "keywords": [
+
+    "silverstripe",
+    "slideshow",
+    "carousel",
+    "slider"
+
+  ],
+  "authors": [
+
+    {
+
+      "name":     "Janne Klouman",
+      "email":    "janne@kreationsbyran.se"
+
+    },
+    {
+
+      "name":     "Herbert Cuba Garcia",
+      "email":    "herbert@kreationsbyran.se"
+
+    }
+
+  ],
+  "support": {
+
+    "email":      "janne@kreationsbyran.se",
+    "issues":     "https://github.com/kreationsbyran/KBSlideshow/issues"
+
+  },
+  "require": {
+
+    "silverstripe/cms":       "~3.1",
+    "silverstripe/framework": "~3.1"
+
+  },
+  "suggest": {
+
+    "undefinedoffset/sortablegridfield": "Allows for drag and drop sorting of slide order."
+
+  }
+
+}
