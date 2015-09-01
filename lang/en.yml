@@ -1,0 +1,14 @@
+en:
+  KBSlideshow:
+    SINGULARNAME: 'Slideshow'
+    PLURALNAME: 'Slideshows'
+    Title: 'Title'
+    Text: 'Text'
+    Image: 'Image'
+  KBSlide:
+    SINGULARNAME: 'Slide'
+    PLURALNAME: 'Slides'
+    NoImageExists: '(no image)'
+    NoTitleExists: '(no title)'
+    NoTextExists: '(no text)'
+    ImageHelp: 'Upload an image that will represent this slide'
