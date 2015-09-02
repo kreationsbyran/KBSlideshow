@@ -122,7 +122,7 @@ class KBSlide extends DataObject{
 			$fields->push( NumericField::create(
 					'SortOrder',
 					_t( 'KBSlideshow.SortOrder', 'Sort order' )
-				)->setRightTitle( _t('KBSlideshow.SortOrderHelp', 'A higher number bumps slide up' ) )
+				)->setRightTitle( _t('KBSlideshow.SortOrderHelp', 'A higher number gives the slide a higher priority' ) )
 			);
 
 		return $fields;
@@ -145,10 +145,10 @@ class KBSlide extends DataObject{
 			if( $w && $h && $w != 0 && $h != 0 )
 				return $img->CroppedImage( $w, $h )->URL;
 
-			if( $w && $h && $w != 0 )
+			if( $w && $w != 0 )
 				return $img->SetWidth( $w )->URL;
 
-			if( $w && $h && $h != 0 )
+			if( $h && $h != 0 )
 				return $img->SetHeight( $h )->URL;
 
 			return $img->URL;

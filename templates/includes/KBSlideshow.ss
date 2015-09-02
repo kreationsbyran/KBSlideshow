@@ -1,8 +1,7 @@
-<% if $Slides %>
+<% if $KBSlides %>
     <div class="kbslideshow">
 
-    <% loop $Slides %>
-
+    <% loop $KBSlides %>
         <div class="kbslide">
 
         <% if $KBImage %>
@@ -18,10 +17,10 @@
         <% end_if %> <%-- / $Text --%>
 
         </div>
-    <% end_loop %> <%-- / $Slides --%>
+    <% end_loop %> <%-- / $KBSlides --%>
 
 </div>
 
-<% include Slick %>
+<% include KBSlick %>
 
-<% end_if %> <%-- / $Slides --%>
+<% end_if %> <%-- / $KBSlides --%>

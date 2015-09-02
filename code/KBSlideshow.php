@@ -42,7 +42,7 @@ class KBSlideshow extends DataExtension {
 	 */
 	private static $has_many = array(
 
-		'Slides' 	=> 'KBSlide',
+		'KBSlides' 	=> 'KBSlide',
 
 	);
 
@@ -60,9 +60,9 @@ class KBSlideshow extends DataExtension {
 			$cfg->addComponent( new GridFieldSortableRows( 'SortOrder' ) );
 
 		$gridField = GridField::create(
-			'Slides',								# Name
+			'KBSlides',								# Name
 			_t( 'KBSlide.PLURALNAME', 'Slides' ),	# Title
-			$this->owner->Slides(),					# DataList
+			$this->owner->KBSlides(),				# DataList
 			$cfg									# Config
 		);
 
