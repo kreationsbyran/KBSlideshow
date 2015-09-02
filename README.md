@@ -32,7 +32,9 @@ Using `<% include KBSlideshow %>` in your SilverStripe template will include the
 
 
 ##### In CMS
-The module extends Page and once installed it will create a tab called "Slideshow" in the CMS of all Pages. "Image rescale width/height" will set the ratio of all slides to width:height if both options are set. If only one is set, the images will be cropped using SilverStripes `Image.SetWidth()` or `Image.SetHeight()` functions. If none are set the selected image won't be rescaled or cropped and can result in heavy load. Recommended to set at least one if slideshow contains images.
+The module extends Page and once installed it will create a tab called "Slideshow" in the CMS of all Pages. 
+
+"Image rescale width/height" will set the ratio of all slides to width:height if both options are set. If only one is set, the images will be cropped using SilverStripes `Image.SetWidth()` or `Image.SetHeight()` functions. If none are set the selected image won't be rescaled or cropped and can result in heavy load. Recommended to set at least one if slideshow contains images.
 
 
 ### Slick
