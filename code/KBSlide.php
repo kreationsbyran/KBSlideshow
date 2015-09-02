@@ -1,7 +1,29 @@
 <?php
+/**
+ * @package KBSlideShow
+ */
 
+/**
+ * The slide model class that contains all fields and configuration
+ * related to individual slides.
+ */
 class KBSlide extends DataObject{
 
+	/**
+	 * Add fields here to easily extend functionality of your slideshow.
+	 * Remember to reflect any changes in {@Link KBSlide::getCMSFields()}.
+	 *
+	 * Example:
+	 * 		private static $db = array(
+	 *			'Title' => 'Varchar',
+	 * 			'Text' => 'Text',
+	 * 			'SortOrder' => 'Int',
+	 * 			'ContainerClass' => 'Varchar', # Custom field
+	 * 			'Autoplay' => 'Boolean' # Custom field
+	 * 		);
+	 *
+	 * @var array
+	 */
 	private static $db = array(
 
 		'Title' 		=> 'Varchar',
@@ -10,6 +32,12 @@ class KBSlide extends DataObject{
 
 	);
 
+	/**
+	 * KBSlideshow is an extension of Page, hence the has_one relation
+	 * with Page rather than {@Link KBSlideshow}.
+	 *
+	 * @var array
+	 */
 	private static $has_one = array(
 
 		'Image'			=> 'Image',
@@ -17,6 +45,11 @@ class KBSlide extends DataObject{
 
 	);
 
+	/**
+	 * Fields shown in the Page CMS GridField.
+	 *
+	 * @var array
+	 */
 	private static $summary_fields = array(
 
 		'GridThumbnail'	=> '',
@@ -25,6 +58,11 @@ class KBSlide extends DataObject{
 
 	);
 
+	/**
+	 * Description labels for the fields shown in the Page CMS GridField.
+	 *
+	 * @var array
+	 */
 	private static $field_names = array(
 
 		'Title'			=> 'Title',
@@ -32,6 +70,12 @@ class KBSlide extends DataObject{
 
 	);
 
+	/**
+	 * Thumbnail function that falls back on a string indicating that an
+	 * image doesn't exist.
+	 *
+	 * @return Image|String
+	 */
 	public function getGridThumbnail() {
 
 		if( $this->Image()->exists() )
@@ -41,6 +85,13 @@ class KBSlide extends DataObject{
 
 	}
 
+	/**
+	 * Creates the CMS interface for managing slides.
+	 * Remember to update this function to correspond with $db and $has_one
+	 * if you are extending the functionality of slides.
+	 *
+	 * @return FieldList
+	 */
 	function getCMSFields() {
 
 		$title = TextField::create(
