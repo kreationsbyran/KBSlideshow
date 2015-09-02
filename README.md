@@ -43,6 +43,9 @@ As mentioned in the introduction the module comes bundled with a demonstration u
 1. Remove `/templates/includes/KBSlick.ss`.
 2. (Optional) Remove `<% include KBSlick %>` from `/templates/includes/KBSlideshow.ss`.
 
+##### Settings
+If you wish to keep using slick, you'll find the settings located in `/templates/includes/KBSlick.ss`. There is currently no back-end support for managing slick settings but can easily be added by modifying the KBSlideshow class.
+
 ### Requirements
 * SilverStripe (tested on 3.1)
 
