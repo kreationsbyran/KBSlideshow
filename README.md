@@ -2,7 +2,6 @@ KBSlideshow
 ----
 Slideshow module for SilverStripe 3.1+ that implements back-end support for slideshows/carousels/sliders. For the sake of demonstration it comes with an plug-and-play example using [slick](https://github.com/kenwheeler/slick). It can easily be removed without disrupting functionality. More about this further down under the [slick](https://github.com/kreationsbyran/KBSlideshow#slick) heading.
 
-
 ### Installation
 As a general rule of thumb it can be a good idea to back up your database and log into your site as Admin before installing modules, so even though nothing should break, feel free to do so.
 ##### Using Composer
@@ -16,6 +15,8 @@ As a general rule of thumb it can be a good idea to back up your database and lo
 2. Move the contents into the root directory of your SilverStripe installation.
 3. Go to http://your.site/dev/build?flush
 
+##### Additionally (optional)
+KBSlideshow works well together with [SortableGridField](https://github.com/UndefinedOffset/SortableGridField) which allows for drag-and-drop sorting of the slides.
 
 ### Usage
 ##### In Template
@@ -40,10 +41,8 @@ As mentioned in the introduction the module comes bundled with a demonstration u
 1. Remove `/templates/includes/KBSlick.ss`.
 2. (Optional) Remove `<% include KBSlick %>` from `/templates/includes/KBSlideshow.ss`.
 
-
-### Dependencies
+### Requirements
 * SilverStripe (tested on 3.1)
-
 
 ### License
 Copyright (c) 2015 Kreationsbyrån Sverige AB
