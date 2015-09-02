@@ -4,11 +4,37 @@
  */
 
 /**
- * A slideshow manager class to handle the slides.
- * This class creates a GridField interface in the CMS for all Pages
- * to manage their Slideshow.
+ * A slideshow manager class.
+ * This class creates an interface in the CMS to manage the slideshow.
+ * Injects to all Pages under the tab "Slideshow" (tab is translatable using KBSlideshow.SINGULARNAME).
  */
 class KBSlideshow extends DataExtension {
+
+	/**
+	 * Fields correspond with basic slick.js options.
+	 *
+	 * Add fields here to easily extend functionality of your slideshow.
+	 * Particularly useful if you are using a custom carousel library
+	 * and want to control its settings through the CMS.
+	 *
+	 * Example:
+	 * 		private static $db = array(
+	 *			'Width' => 'Varchar',
+	 * 			'Height' => 'Text',
+	 * 			'Autoplay' => 'Boolean' # Custom field
+	 * 		);
+	 *
+	 * Remember to reflect any changes in {@Link KBSlideshow::getCMSFields()}.
+	 *
+	 * @var array
+	 */
+	private static $db = array(
+
+		# -- Used by template --
+		'Width' 		=> 'Varchar',
+		'Height'		=> 'Varchar',
+
+	);
 
 	/**
 	 * The slideshow has many {@Link KBSlide}
@@ -16,12 +42,12 @@ class KBSlideshow extends DataExtension {
 	 */
 	private static $has_many = array(
 
-		"Slides" 	=> "KBSlide",
+		'Slides' 	=> 'KBSlide',
 
 	);
 
 	/**
-	 * Updates the CMS with a GridField to C/R/U/D slides.
+	 * Updates the CMS with a GridField to manage slides.
 	 * @param FieldList $fields
 	 */
 	function updateCMSFields( FieldList $fields ) {
@@ -33,7 +59,6 @@ class KBSlideshow extends DataExtension {
 		if( class_exists( 'GridFieldSortableRows' ) )
 			$cfg->addComponent( new GridFieldSortableRows( 'SortOrder' ) );
 
-
 		$gridField = GridField::create(
 			'Slides',								# Name
 			_t( 'KBSlide.PLURALNAME', 'Slides' ),	# Title
@@ -41,7 +66,26 @@ class KBSlideshow extends DataExtension {
 			$cfg									# Config
 		);
 
-		$fields->addFieldToTab( 'Root.' . _t('KBSlideshow.SINGULARNAME', 'Slideshow'), $gridField );
+		$width = NumericField::create(
+			'Width',
+			_t( 'KBSlideshow.Width' ,'Width' )
+		)->setRightTitle( _t( 'KBSlideshow.WidthHelp', '' ) );
+		
+		$height = NumericField::create(
+			'Height',
+			_t( 'KBSlideshow.Height' ,'Height' )
+		)->setRightTitle( _t( 'KBSlideshow.HeightHelp', '' ) );
+
+		$fields->addFieldsToTab(
+			'Root.' . _t( 'KBSlideshow.SINGULARNAME', 'Slideshow' ),
+			array(
+
+				$gridField,
+				$width,
+				$height
+
+			)
+		);
 
 	}
 

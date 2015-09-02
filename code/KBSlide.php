@@ -10,17 +10,8 @@
 class KBSlide extends DataObject{
 
 	/**
-	 * Add fields here to easily extend functionality of your slideshow.
+	 * Add fields here to easily extend functionality of your slides.
 	 * Remember to reflect any changes in {@Link KBSlide::getCMSFields()}.
-	 *
-	 * Example:
-	 * 		private static $db = array(
-	 *			'Title' => 'Varchar',
-	 * 			'Text' => 'Text',
-	 * 			'SortOrder' => 'Int',
-	 * 			'ContainerClass' => 'Varchar', # Custom field
-	 * 			'Autoplay' => 'Boolean' # Custom field
-	 * 		);
 	 *
 	 * @var array
 	 */
@@ -57,6 +48,7 @@ class KBSlide extends DataObject{
 		'Text'			=> 'Text'
 
 	);
+
 
 	/**
 	 * Description labels for the fields shown in the Page CMS GridField.
@@ -125,7 +117,46 @@ class KBSlide extends DataObject{
 			)
 		);
 
+		# Allow for manual input sorting if module:SortableGridField isn't installed
+		if( !class_exists( 'GridFieldSortableRows' ) )
+			$fields->push( NumericField::create(
+					'SortOrder',
+					_t( 'KBSlideshow.SortOrder', 'Sort order' )
+				)->setRightTitle( _t('KBSlideshow.SortOrderHelp', 'A higher number bumps slide up' ) )
+			);
+
 		return $fields;
+	}
+
+	/**
+	 * Returns an url to the current slides image, cropped accordingly if defined.
+	 * Returns false if no Image exists.
+	 *
+	 * @return bool|string
+	 */
+	public function KBImage() {
+
+		if( $this->Image() ) {
+
+			$img = $this->Image();
+			$w 	 = $this->Page()->Width;
+			$h   = $this->Page()->Height;
+
+			if( $w && $h && $w != 0 && $h != 0 )
+				return $img->CroppedImage( $w, $h )->URL;
+
+			if( $w && $h && $w != 0 )
+				return $img->SetWidth( $w )->URL;
+
+			if( $w && $h && $h != 0 )
+				return $img->SetHeight( $h )->URL;
+
+			return $img->URL;
+
+		}
+
+		return false;
+
 	}
 	
 }
