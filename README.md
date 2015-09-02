@@ -48,6 +48,7 @@ If you wish to keep using slick, you'll find the settings located in `/templates
 
 ### Requirements
 * SilverStripe (tested on 3.1)
+* jQuery 1.7 or above (**if using slick**)
 
 ### License
 Copyright (c) 2015 Kreationsbyrån Sverige AB
