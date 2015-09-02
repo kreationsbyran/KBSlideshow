@@ -9,7 +9,7 @@
 <script type="text/javascript">
 $( document ).ready( function() {
 
-    // Slick settings
+    // Slick settings (just a couple)
     // Full list of settings can be found here: https://github.com/kenwheeler/slick/#settings
     var cfg = {
 
@@ -24,7 +24,7 @@ $( document ).ready( function() {
 
     };
 
-    // Initialize slick
+    // Initialize
     $( '.kbslideshow' ).slick( cfg );
 
 });
