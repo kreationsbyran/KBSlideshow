@@ -38,10 +38,10 @@ The module extends Page and once installed it will create a tab called "Slidesho
 
 
 ### Slick
-As mentioned in the introduction the module comes bundled with a demonstration using [slick](https://github.com/kenwheeler/slick). To remove the coupling between the module and slick in order to use another slideshow/slider/carousel library, simply follow these two steps:
+The module comes bundled with a demonstration using [slick](https://github.com/kenwheeler/slick). To remove the coupling between the module and slick in order to use a different slideshow/slider/carousel library, simply follow these two steps:
 
 1. Remove `/templates/includes/KBSlick.ss`.
-2. (Optional) Remove `<% include KBSlick %>` from `/templates/includes/KBSlideshow.ss`.
+2. Remove `<% include KBSlick %>` from `/templates/includes/KBSlideshow.ss`.
 
 ##### Settings
 If you wish to keep using slick, you'll find the settings located in `/templates/includes/KBSlick.ss`. There is currently no back-end support for managing slick settings but can easily be added by modifying the KBSlideshow class.
