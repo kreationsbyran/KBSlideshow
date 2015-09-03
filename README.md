@@ -4,8 +4,11 @@ Slideshow module for SilverStripe 3.1+ that implements back-end support for slid
 
 ### Installation
 As a general rule of thumb it can be a good idea to back up your database and log into your site as Admin before installing modules, so even though nothing should break, feel free to do so.
-##### Using Composer
 
+##### Requirements
+* SilverStripe 3.1+
+
+##### Using Composer
 1. Open a terminal and `cd` to your SilverStripe root.
 2. Run `composer require kreationsbyran/kb-slideshow`.
 3. Go to http://your.site/dev/build?flush
@@ -45,10 +48,6 @@ The module comes bundled with a demonstration using [slick](https://github.com/k
 
 ##### Settings
 If you wish to keep using slick, you'll find the settings located in `/templates/includes/KBSlick.ss`. There is currently no back-end support for managing slick settings but can easily be added by modifying the KBSlideshow class.
-
-### Requirements
-* SilverStripe (tested on 3.1)
-* jQuery 1.7 or above (**if using slick**)
 
 ### License
 Copyright (c) 2015 Kreationsbyrån Sverige AB
