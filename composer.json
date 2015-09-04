@@ -1,7 +1,7 @@
 {
 
   "name":         "kreationsbyran/kb-slideshow",
-  "version":      "1.0.2-beta",
+  "version":      "1.0.3",
   "description":  "Simple slideshow module",
   "type":         "silverstripe-module",
   "homepage":     "https://github.com/kreationsbyran/KBSlideshow",
@@ -41,6 +41,7 @@
     "silverstripe/framework": "~3.1"
 
   },
+  "license": "MIT",
   "suggest": {
 
     "undefinedoffset/sortablegridfield": "Allows for drag and drop sorting of slide order."
