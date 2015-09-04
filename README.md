@@ -1,5 +1,7 @@
 KBSlideshow
 ----
+[![Latest Stable Version](https://poser.pugx.org/kreationsbyran/kb-slideshow/v/stable)](https://packagist.org/packages/kreationsbyran/kb-slideshow) [![License](https://poser.pugx.org/kreationsbyran/kb-slideshow/license)](https://packagist.org/packages/kreationsbyran/kb-slideshow)
+___
 Slideshow module for SilverStripe 3.1+ that implements back-end support for slideshows/carousels/sliders. For the sake of demonstration it comes with an plug-and-play example using [slick](https://github.com/kenwheeler/slick). It can easily be removed without disrupting functionality. More about this further down under the [slick](https://github.com/kreationsbyran/KBSlideshow#slick) heading.
 
 ### Installation
