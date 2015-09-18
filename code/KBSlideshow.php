@@ -60,10 +60,10 @@ class KBSlideshow extends DataExtension {
 			$cfg->addComponent( new GridFieldSortableRows( 'SortOrder' ) );
 
 		$gridField = GridField::create(
-			'KBSlides',								# Name
+			'KBSlides',				# Name
 			_t( 'KBSlide.PLURALNAME', 'Slides' ),	# Title
-			$this->owner->KBSlides(),				# DataList
-			$cfg									# Config
+			$this->owner->KBSlides(),		# DataList
+			$cfg					# Config
 		);
 
 		$width = NumericField::create(
