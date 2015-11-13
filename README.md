@@ -13,12 +13,12 @@ As a general rule of thumb it can be a good idea to back up your database and lo
 ##### Using Composer
 1. Open a terminal and `cd` to your SilverStripe root.
 2. Run `composer require kreationsbyran/kb-slideshow`.
-3. Go to http://your.site/dev/build?flush
+3. Go to http://your.site/dev/build?flush (replace "your.site" with the url of your website)
 
 ##### Manually
 1. Download the zipped master branch ([here](https://github.com/kreationsbyran/KBSlideshow/archive/master.zip)).
 2. Move the contents into the root directory of your SilverStripe installation.
-3. Go to http://your.site/dev/build?flush
+3. Go to http://your.site/dev/build?flush (replace "your.site" with the url of your website)
 
 ##### Additionally (optional)
 KBSlideshow works well together with [SortableGridField](https://github.com/UndefinedOffset/SortableGridField) which allows for drag-and-drop sorting of the slides.
