@@ -18,9 +18,9 @@ class KBSlide extends DataObject
      */
     private static $db = array(
 
-        'Title'        => 'Varchar',
-        'Text'            => 'Text',
-        'SortOrder'        => 'Int' # Used by SortableGridField module, if installed
+        'Title'     => 'Varchar',
+        'Text'      => 'Text',
+        'SortOrder' => 'Int' # Used by SortableGridField module, if installed
 
     );
 
@@ -32,8 +32,8 @@ class KBSlide extends DataObject
      */
     private static $has_one = array(
 
-        'Image'            => 'Image',
-        'Page'            => 'Page'
+        'Image' => 'Image',
+        'Page'  => 'Page'
 
     );
 
@@ -44,9 +44,9 @@ class KBSlide extends DataObject
      */
     private static $summary_fields = array(
 
-        'GridThumbnail'    => '',
-        'Title'            => 'Title',
-        'Text'            => 'Text'
+        'GridThumbnail' => '',
+        'Title'         => 'Title',
+        'Text'          => 'Text'
 
     );
 
@@ -58,8 +58,8 @@ class KBSlide extends DataObject
      */
     private static $field_names = array(
 
-        'Title'            => 'Title',
-        'Text'            => 'Text'
+        'Title' => 'Title',
+        'Text'  => 'Text'
 
     );
 
@@ -110,11 +110,9 @@ class KBSlide extends DataObject
 
         $fields = FieldList::create(
             array(
-
                 $title,
                 $text,
                 $upload
-
             )
         );
 
@@ -140,7 +138,7 @@ class KBSlide extends DataObject
     {
         if ($this->Image()) {
             $img = $this->Image();
-            $w     = $this->Page()->Width;
+            $w   = $this->Page()->Width;
             $h   = $this->Page()->Height;
 
             if ($w && $h && $w != 0 && $h != 0) {
