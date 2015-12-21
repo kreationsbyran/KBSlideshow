@@ -32,8 +32,8 @@ class KBSlideshow extends DataExtension
     private static $db = array(
 
         # -- Used by template --
-        'Width'        => 'Varchar',
-        'Height'        => 'Varchar',
+        'Width'  => 'Varchar',
+        'Height' => 'Varchar',
 
     );
 
@@ -43,7 +43,7 @@ class KBSlideshow extends DataExtension
      */
     private static $has_many = array(
 
-        'KBSlides'    => 'KBSlide',
+        'KBSlides' => 'KBSlide',
 
     );
 
@@ -62,10 +62,10 @@ class KBSlideshow extends DataExtension
         }
 
         $gridField = GridField::create(
-            'KBSlides',                # Name
-            _t('KBSlide.PLURALNAME', 'Slides'),    # Title
-            $this->owner->KBSlides(),        # DataList
-            $cfg                    # Config
+            'KBSlides',                         # Name
+            _t('KBSlide.PLURALNAME', 'Slides'), # Title
+            $this->owner->KBSlides(),           # DataList
+            $cfg                                # Config
         );
 
         $width = NumericField::create(
@@ -81,11 +81,9 @@ class KBSlideshow extends DataExtension
         $fields->addFieldsToTab(
             'Root.' . _t('KBSlideshow.SINGULARNAME', 'Slideshow'),
             array(
-
                 $gridField,
                 $width,
                 $height
-
             )
         );
     }
